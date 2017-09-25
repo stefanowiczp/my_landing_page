@@ -10,15 +10,20 @@
     font-family: 'Bubblegum Sans', cursive;
 }
 
-.menu {
-    display: flex;
-    justify-content: space-around;
-    list-style: none;
+.menu--container {
     background-color: #2c3244;
     /*background-color: #24292e;*/
     color: #fff;
     height: 70px;
     line-height: 70px;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    max-width: 900px;
+    margin: auto
 }
 
 .menu--item {
@@ -27,14 +32,29 @@
 }
 
 .content--container {
-    height: 100vh;
+    height: calc(100vh - 110px);
     background: url("../img/IMG_2738111-Edit.jpg") center;
     background-size: cover;
 }
 
 .contact--container {
-    height: 100vh;
+    height: calc(100vh - 110px);
     background-color: rgba(44, 50, 68, 0.85);
+    font-size: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-decoration: none;
+    color: #fff;
+}
+
+.contact--container a {
+    color: #fff;
+    cursor: pointer;
+}
+
+.contact--container a :visited {
+    color: #fff;
 }
 
 .footer {
