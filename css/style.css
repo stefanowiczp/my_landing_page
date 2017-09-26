@@ -45,7 +45,6 @@
 }
 
 .skills--container {
-    /*height: calc(100vh - 120px);*/
     background-color: rgba(44, 50, 68, 0.85);
     display: none;
     flex-direction: column;
@@ -71,6 +70,66 @@
     height: 50px;
     margin: 10px;
     background-color: #c9553c;
+}
+
+.html {
+    background: url("../img/icons/html.png") center;
+    background-size: cover;
+}
+
+.css {
+    background: url("../img/icons/css.png") center;
+    background-size: cover;
+}
+
+.rwd {
+    background: url("../img/icons/rwd.png") center;
+    background-size: cover;
+}
+
+.bootstrap {
+    background: url("../img/icons/bootstrap.png") center;
+    background-size: cover;
+}
+
+.wordpress {
+    background: url("../img/icons/wordpress.png") center;
+    background-size: cover;
+}
+
+.javascript {
+    background: url("../img/icons/js.png") center;
+    background-size: cover;
+}
+
+.jquery {
+    background: url("../img/icons/jquery.png") center;
+    background-size: cover;
+}
+
+.react {
+    background: url("../img/icons/react.png") center;
+    background-size: cover;
+}
+
+.git {
+    background: url("../img/icons/git-black.png") center;
+    background-size: cover;
+}
+
+.photoshop {
+    background: url("../img/icons/photoshop.png") center;
+    background-size: cover;
+}
+
+.jira {
+    background: url("../img/icons/jira.png") center;
+    background-size: cover;
+}
+
+.scrum {
+    background: url("../img/icons/scrum.png") center;
+    background-size: cover;
 }
 
 .smart-phone {
