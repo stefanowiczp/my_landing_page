@@ -45,7 +45,7 @@ skills = [
   {
     icon: htmlIcon,
     url: "./img/icons/html.png",
-    rating: 4
+    rating: 3
   }, {
     icon: cssIcon,
     url: "./img/icons/css.png",
@@ -99,7 +99,14 @@ var putOnScreen = function (skill) {
   smartPhoneScreen.style.backgroundSize = 'contain';
   smartPhoneScreen.style.backgroundRepeat = 'no-repeat';
   smartPhoneScreen.style.paddingTop = '200px';
-  smartPhoneScreen.innerHTML = skill.rating + '/5';
+  smartPhoneScreen.innerHTML = "";
+  for (var i = 1; i <= skill.rating; i++) {
+    var currentState = smartPhoneScreen.innerHTML;
+    currentState = currentState + "<img src='./img/icons/star.png' alt='star'/>";
+    console.log(currentState);
+    console.log(smartPhoneScreen.innerHTML);
+    smartPhoneScreen.innerHTML = currentState;
+  }
   activeSkill !== undefined ? activeSkill.classList.remove('skills-item__active') : null;
   skill.icon.classList.add('skills-item__active');
   smartPhoneButton.classList.add('fix')
