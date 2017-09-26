@@ -103,8 +103,6 @@ var putOnScreen = function (skill) {
   for (var i = 1; i <= skill.rating; i++) {
     var currentState = smartPhoneScreen.innerHTML;
     currentState = currentState + "<img src='./img/icons/star.png' alt='star'/>";
-    console.log(currentState);
-    console.log(smartPhoneScreen.innerHTML);
     smartPhoneScreen.innerHTML = currentState;
   }
   activeSkill !== undefined ? activeSkill.classList.remove('skills-item__active') : null;
