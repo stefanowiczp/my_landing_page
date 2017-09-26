@@ -5,7 +5,6 @@ var homeSection = document.getElementsByClassName('home--container')[0];
 var skillsSection = document.getElementsByClassName('skills--container')[0];
 var contactSection = document.getElementsByClassName('contact--container')[0];
 
-
 var show = function (element, section) {
   homeSection.style.display = "none";
   skillsSection.style.display = "none";
