@@ -46,6 +46,19 @@
 
 .home--container {
     height: calc(100vh - 120px);
+    display: flex;
+    justify-content: center;
+}
+
+.home--content {
+    color: #fff;
+    padding: 160px 0;
+    font-size: 1.3em;
+}
+
+.home--content h1 {
+    background-color: rgba(44, 50, 68, 0.80);
+    padding: 0 5px;
 }
 
 .skills--container {

@@ -91,16 +91,16 @@ skills = [
     url: "./img/icons/scrum.png",
     rating: 2
   }
-]
-;
-console.log(smartPhoneButton)
+];
+
 var putOnScreen = function (skill) {
+  var activeSkill = document.getElementsByClassName('skills-item__active')[0];
   smartPhoneScreen.style.background = 'url(' + skill.url + ')';
   smartPhoneScreen.style.backgroundSize = 'contain';
   smartPhoneScreen.style.backgroundRepeat = 'no-repeat';
   smartPhoneScreen.style.paddingTop = '200px';
   smartPhoneScreen.innerHTML = skill.rating + '/5';
-  document.getElementsByClassName('skills-item__active')[0].classList.remove('skills-item__active');
+  activeSkill !== undefined ? activeSkill.classList.remove('skills-item__active') : null;
   skill.icon.classList.add('skills-item__active');
   smartPhoneButton.classList.add('fix')
 };
@@ -112,6 +112,8 @@ skills.map(function (skill) {
 });
 
 smartPhoneButton.addEventListener('click', function () {
+  var activeSkill = document.getElementsByClassName('skills-item__active')[0];
+  activeSkill !== undefined ? activeSkill.classList.remove('skills-item__active') : null;
   smartPhoneButton.classList.remove('fix');
   smartPhoneScreen.style.background = "url('./img/page-smart-phone.png') ";
   smartPhoneScreen.style.backgroundSize = 'contain';
