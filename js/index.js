@@ -94,7 +94,6 @@ skills = [
 ];
 
 var putOnScreen = function (skill) {
-  var activeSkill = document.getElementsByClassName('skills-item__active')[0];
   smartPhoneScreen.style.background = 'url(' + skill.url + ')';
   smartPhoneScreen.style.backgroundSize = 'contain';
   smartPhoneScreen.style.backgroundRepeat = 'no-repeat';
@@ -105,8 +104,6 @@ var putOnScreen = function (skill) {
     currentState = currentState + "<img src='./img/icons/star.png' alt='star'/>";
     smartPhoneScreen.innerHTML = currentState;
   }
-  activeSkill !== undefined ? activeSkill.classList.remove('skills-item__active') : null;
-  skill.icon.classList.add('skills-item__active');
   smartPhoneButton.classList.add('fix')
 };
 
@@ -117,8 +114,6 @@ skills.map(function (skill) {
 });
 
 smartPhoneButton.addEventListener('click', function () {
-  var activeSkill = document.getElementsByClassName('skills-item__active')[0];
-  activeSkill !== undefined ? activeSkill.classList.remove('skills-item__active') : null;
   smartPhoneButton.classList.remove('fix');
   smartPhoneScreen.style.background = "url('./img/page-smart-phone.png') ";
   smartPhoneScreen.style.backgroundSize = 'contain';

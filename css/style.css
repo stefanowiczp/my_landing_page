@@ -93,10 +93,6 @@
     filter: opacity(80%);
 }
 
-.skills-item__active {
-    border: 2px solid #c9553c;
-}
-
 .html {
     background: url("../img/icons/html.png") center;
     background-size: cover;
