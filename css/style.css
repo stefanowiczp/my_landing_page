@@ -27,7 +27,7 @@
 }
 
 .menu--item {
-    font-size: 1.3em;
+    font-size: 1.1em;
     cursor: pointer;
 }
 
@@ -232,7 +232,7 @@
 
 @media screen and (min-width: 500px) {
     .menu--item {
-        font-size: 2.2em;
+        font-size: 2em;
     }
 
     .home--content {
