@@ -164,6 +164,23 @@
     font-size: 40px;
 }
 
+.smart-phone--home-btn {
+    margin-top: 5px;
+    margin-left: 82px;
+    height: 38px;
+    width: 38px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.fix {
+    margin-top: -195px;
+}
+
+.smart-phone--home-btn:hover {
+    background-color: rgba(256, 265, 256, 0.6);
+}
+
 .contact--container {
     height: calc(100vh - 120px);
     background-color: rgba(44, 50, 68, 0.85);

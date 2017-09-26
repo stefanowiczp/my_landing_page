@@ -39,6 +39,7 @@ var gitIcon = document.getElementsByClassName('git')[0];
 var photoshopIcon = document.getElementsByClassName('photoshop')[0];
 var scrumIcon = document.getElementsByClassName('scrum')[0];
 var jiraIcon = document.getElementsByClassName('jira')[0];
+var smartPhoneButton = document.getElementsByClassName('smart-phone--home-btn')[0];
 
 skills = [
   {
@@ -92,7 +93,7 @@ skills = [
   }
 ]
 ;
-
+console.log(smartPhoneButton)
 var putOnScreen = function (skill) {
   smartPhoneScreen.style.background = 'url(' + skill.url + ')';
   smartPhoneScreen.style.backgroundSize = 'contain';
@@ -100,11 +101,21 @@ var putOnScreen = function (skill) {
   smartPhoneScreen.style.paddingTop = '200px';
   smartPhoneScreen.innerHTML = skill.rating + '/5';
   document.getElementsByClassName('skills-item__active')[0].classList.remove('skills-item__active');
-  skill.icon.classList.add('skills-item__active')
+  skill.icon.classList.add('skills-item__active');
+  smartPhoneButton.classList.add('fix')
 };
 
 skills.map(function (skill) {
   skill.icon.addEventListener('click', function () {
     putOnScreen(skill)
   })
+});
+
+smartPhoneButton.addEventListener('click', function () {
+  smartPhoneButton.classList.remove('fix');
+  smartPhoneScreen.style.background = "url('./img/page-smart-phone.png') ";
+  smartPhoneScreen.style.backgroundSize = 'contain';
+  smartPhoneScreen.style.backgroundRepeat = 'no-repeat';
+  smartPhoneScreen.style.paddingTop = '0';
+  smartPhoneScreen.innerHTML = "";
 });
