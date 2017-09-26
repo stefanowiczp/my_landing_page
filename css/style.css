@@ -74,6 +74,7 @@
     height: 50px;
     margin: 10px;
     cursor: pointer;
+    border: 2px transparent solid;
 }
 
 .skills--item:hover {
@@ -159,6 +160,8 @@
     width: 165px;
     background: url("../img/page-smart-phone.png") center;
     background-size: cover;
+    color: #fff;
+    font-size: 40px;
 }
 
 .contact--container {
