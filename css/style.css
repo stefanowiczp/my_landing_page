@@ -52,6 +52,23 @@
     display: none;
 }
 
+.smart-phone {
+    margin: 15% 0 0 10%;
+    width: 200px;
+    height: 400px;
+    background: url("../img/IPhone_5C_Black.png") center;
+    background-size: cover;
+}
+
+.smart-phone--screen {
+    margin-top: 55px;
+    margin-left: 17px;
+    height: 295px;
+    width: 165px;
+    background: url("../img/page-smart-phone.png") center;
+    background-size: cover;
+}
+
 .contact--container {
     height: calc(100vh - 120px);
     background-color: rgba(44, 50, 68, 0.85);
