@@ -42,6 +42,8 @@
 .content--container {
     background: url("../img/IMG_2738111-Edit.jpg") center;
     background-size: cover;
+    overflow: hidden;
+
 }
 
 .home--container {
