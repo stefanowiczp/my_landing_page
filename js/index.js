@@ -1,3 +1,4 @@
+//      MENU
 var homeButton = document.getElementById('home');
 var skillsButton = document.getElementById('skills');
 var contactButton = document.getElementById('contact');
@@ -23,3 +24,7 @@ skillsButton.addEventListener("click", function () {
 contactButton.addEventListener("click", function () {
   show(contactButton, contactSection)
 });
+
+//     SKILLS
+
+
