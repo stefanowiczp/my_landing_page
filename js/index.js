@@ -120,7 +120,6 @@ skills = [
 var putOnScreen = function (skill) {
   fadeOut(smartPhoneScreen);
   setTimeout(function () {
-    fadeIn(smartPhoneScreen)
     smartPhoneScreen.style.background = 'url(' + skill.url + ')';
     smartPhoneScreen.style.backgroundSize = 'contain';
     smartPhoneScreen.style.backgroundRepeat = 'no-repeat';
@@ -131,7 +130,8 @@ var putOnScreen = function (skill) {
       currentState = currentState + "<img src='./img/icons/star.png' alt='star'/>";
       smartPhoneScreen.innerHTML = currentState;
     }
-    smartPhoneButton.classList.add('fix')
+    smartPhoneButton.classList.add('fix');
+    fadeIn(smartPhoneScreen);
   }, 200);
 
 };
@@ -143,10 +143,14 @@ skills.map(function (skill) {
 });
 
 smartPhoneButton.addEventListener('click', function () {
-  smartPhoneButton.classList.remove('fix');
-  smartPhoneScreen.style.background = "url('./img/page-smart-phone.png') ";
-  smartPhoneScreen.style.backgroundSize = 'contain';
-  smartPhoneScreen.style.backgroundRepeat = 'no-repeat';
-  smartPhoneScreen.style.paddingTop = '0';
-  smartPhoneScreen.innerHTML = "";
+  fadeOut(smartPhoneScreen);
+  setTimeout(function () {
+    fadeIn(smartPhoneScreen)
+    smartPhoneButton.classList.remove('fix');
+    smartPhoneScreen.style.background = "url('./img/page-smart-phone.png') ";
+    smartPhoneScreen.style.backgroundSize = 'contain';
+    smartPhoneScreen.style.backgroundRepeat = 'no-repeat';
+    smartPhoneScreen.style.paddingTop = '0';
+    smartPhoneScreen.innerHTML = "";
+  }, 200)
 });
