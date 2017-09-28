@@ -6,13 +6,37 @@ var homeSection = document.getElementsByClassName('home--container')[0];
 var skillsSection = document.getElementsByClassName('skills--container')[0];
 var contactSection = document.getElementsByClassName('contact--container')[0];
 
+//  !!!Default animations time is 200 not 400!!!
+
+var fadeIn = function (element) {
+  var delta = 0;
+  var animation = setInterval(function () {
+    delta >= 1 ? clearInterval(animation) : delta += 0.10;
+    element.style.opacity = delta
+  }, 20)
+};
+var fadeOut = function (element) {
+
+  var delta = 1;
+  var animation = setInterval(function () {
+    delta <= 0 ? clearInterval(animation) : delta -= 0.10;
+    element.style.opacity = delta
+  }, 20)
+};
+
 var show = function (element, section) {
-  homeSection.style.display = "none";
-  skillsSection.style.display = "none";
-  contactSection.style.display = "none";
-  section.style.display = "flex";
-  document.getElementsByClassName('active')[0].classList.remove('active');
-  element.classList.add('active');
+  fadeOut(homeSection);
+  fadeOut(skillsSection);
+  fadeOut(contactSection);
+  setTimeout(function () {
+    homeSection.style.display = "none";
+    skillsSection.style.display = "none";
+    contactSection.style.display = "none";
+    section.style.display = "flex";
+    fadeIn(section);
+    document.getElementsByClassName('active')[0].classList.remove('active');
+    element.classList.add('active');
+  }, 200);
 };
 
 homeButton.addEventListener("click", function () {
@@ -94,17 +118,22 @@ skills = [
 ];
 
 var putOnScreen = function (skill) {
-  smartPhoneScreen.style.background = 'url(' + skill.url + ')';
-  smartPhoneScreen.style.backgroundSize = 'contain';
-  smartPhoneScreen.style.backgroundRepeat = 'no-repeat';
-  smartPhoneScreen.style.paddingTop = '200px';
-  smartPhoneScreen.innerHTML = "";
-  for (var i = 1; i <= skill.rating; i++) {
-    var currentState = smartPhoneScreen.innerHTML;
-    currentState = currentState + "<img src='./img/icons/star.png' alt='star'/>";
-    smartPhoneScreen.innerHTML = currentState;
-  }
-  smartPhoneButton.classList.add('fix')
+  fadeOut(smartPhoneScreen);
+  setTimeout(function () {
+    fadeIn(smartPhoneScreen)
+    smartPhoneScreen.style.background = 'url(' + skill.url + ')';
+    smartPhoneScreen.style.backgroundSize = 'contain';
+    smartPhoneScreen.style.backgroundRepeat = 'no-repeat';
+    smartPhoneScreen.style.paddingTop = '200px';
+    smartPhoneScreen.innerHTML = "";
+    for (var i = 1; i <= skill.rating; i++) {
+      var currentState = smartPhoneScreen.innerHTML;
+      currentState = currentState + "<img src='./img/icons/star.png' alt='star'/>";
+      smartPhoneScreen.innerHTML = currentState;
+    }
+    smartPhoneButton.classList.add('fix')
+  }, 200);
+
 };
 
 skills.map(function (skill) {
