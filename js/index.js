@@ -27,11 +27,11 @@ var checkTranslation = function (section) {
 };
 var lastId = 0;
 var currentTranslation = 0;
+var delta = 0;
 
 var slide = function (id) {
-  var delta = 0;
   var steps = lastId - parseInt(id, 10);
-  if (steps !== 0) {
+  if (steps !== 0 && delta === 0) {
     var sectionSliding = setInterval(function () {
       if (delta < 100) {
         delta += 5;
@@ -40,6 +40,7 @@ var slide = function (id) {
         contactSection.style.transform = "translate3d(0px, calc(" + (currentTranslation + delta * steps  ) + "vh + 70px), 0px)";
       }
       else {
+        delta = 0;
         clearInterval(sectionSliding);
         lastId = parseInt(id, 10);
         currentTranslation = parseInt(checkTranslation(contactSection), 10);
