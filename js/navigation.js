@@ -38,11 +38,19 @@ menuLinks.forEach(function (item) {
     document.querySelector('.active').classList.remove('active');
     event.target.parentElement.classList.add('active');
     if (window.innerWidth >= 500) {
+      document.querySelectorAll('.section').forEach(function (section) {
+        section.style.display = "flex";
+      });
       event.preventDefault();
       slide(event.target.getAttribute('data-id'))
     }
     else {
-      slide(0)
+      document.querySelectorAll('.section').forEach(function (section) {
+        section.style.display = "none";
+        section.style.transform = "translate3d(0,0,0)"
+      });
+      var id = event.target.getAttribute('data-id');
+      document.querySelectorAll('.section')[id].style.display = "flex"
     }
   })
 });

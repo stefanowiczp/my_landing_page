@@ -10,7 +10,7 @@
     font-family: 'Sintony', sans-serif;
     background: url("../img/IMG_2738111-Edit.jpg") center;
     background-size: cover;
-    background-attachment: fixed !important;
+    background-attachment: fixed;
 }
 
 .menu--container {
@@ -241,14 +241,18 @@
         height: calc(100vh);
         padding: 70px 0 0 0;
     }
+    .section{
+
+    }
 
     .home--container {
         height: calc(100vh);
+        display: flex;
     }
 
     .home--content {
         font-size: 1.3em;
-        padding: 200px;
+        padding: 200px 0 0 0;
     }
 
     .skills--container {
@@ -256,12 +260,14 @@
         height: calc(100vh);
         box-sizing: border-box;
         padding: 0;
+        display: flex;
     }
 
     .contact--container {
         font-size: 2em;
         height: calc(100vh);
         box-sizing: border-box;
+        display: flex;
     }
 }
 
