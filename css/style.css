@@ -42,10 +42,11 @@
 .content--container {
     background: url("../img/IMG_2738111-Edit.jpg") center;
     background-size: cover;
+    background-attachment: fixed;
 }
 
 .home--container {
-    height: calc(100vh - 120px);
+    height: calc(100vh - 70px);
     display: flex;
     justify-content: center;
 }
@@ -62,7 +63,7 @@
 
 .skills--container {
     background-color: rgba(44, 50, 68, 0.85);
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
@@ -190,10 +191,10 @@
 }
 
 .contact--container {
-    height: calc(100vh - 120px);
+    height: calc(100vh - 70px);
     background-color: rgba(44, 50, 68, 0.85);
     font-size: 1em;
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     text-decoration: none;
@@ -235,24 +236,22 @@
         font-size: 1.3em;
     }
 
+    .home--container {
+        height: calc(100vh - 70px);
+    }
+
     .skills--container {
         flex-direction: row;
+        height: calc(100vh - 70px);
     }
 
     .contact--container {
         font-size: 2em;
+        height: calc(100vh - 70px);
     }
 
     .footer {
         font-size: 20px;
-    }
-
-    .content--container {
-        height: calc(100vh - 120px);
-    }
-
-    .skills--container {
-        height: calc(100vh - 120px);
     }
 
 }

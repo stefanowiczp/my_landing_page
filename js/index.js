@@ -24,29 +24,50 @@ var fadeOut = function (element) {
   }, 20)
 };
 
-var show = function (element, section) {
-  fadeOut(homeSection);
-  fadeOut(skillsSection);
-  fadeOut(contactSection);
-  setTimeout(function () {
-    homeSection.style.display = "none";
-    skillsSection.style.display = "none";
-    contactSection.style.display = "none";
-    section.style.display = "flex";
-    fadeIn(section);
-    document.getElementsByClassName('active')[0].classList.remove('active');
-    element.classList.add('active');
-  }, 200);
-};
+// var show = function (element, section) {
+//   fadeOut(homeSection);
+//   fadeOut(skillsSection);
+//   fadeOut(contactSection);
+//   setTimeout(function () {
+//     homeSection.style.display = "none";
+//     skillsSection.style.display = "none";
+//     contactSection.style.display = "none";
+//     section.style.display = "flex";
+//     fadeIn(section);
+//     document.getElementsByClassName('active')[0].classList.remove('active');
+//     element.classList.add('active');
+//   }, 200);
+// };
+function slide(id) {
+  homeSection.style.transform = "translate3d(0px, -" + id + "00vh, 0px)";
+  skillsSection.style.transform = "translate3d(0px, calc(-" + id + "00vh + 70px), 0px)";
+  contactSection.style.transform = "translate3d(0px, calc(-" + id + "00vh + 140px), 0px)";
+}
 
 homeButton.addEventListener("click", function () {
-  show(homeButton, homeSection)
+  // show(homeButton, homeSection)
+  // homeSection.style.transform = "translate3d(0px, -622px, 0px)";
+  // homeSection.style.transform = "translate3d(0px, 0, 0px)";
+  // skillsSection.style.transform = "translate3d(0px, 0, 0px)";
+  // contactSection.style.transform = "translate3d(0px, 0, 0px)";
+  slide(0)
 });
 skillsButton.addEventListener("click", function () {
-  show(skillsButton, skillsSection)
+  // show(skillsButton, skillsSection)
+  // homeSection.style.transform = "translate3d(0px, 100vh, 0px)";
+  // skillsSection.style.transform = "translate3d(0px,  calc(-100vh + 70px), 0px)";
+  // contactSection.style.transform = "translate3d(0px, calc(-100vh + 140px), 0px)";
+  slide(1)
+
 });
 contactButton.addEventListener("click", function () {
-  show(contactButton, contactSection)
+  // show(contactButton, contactSection)
+  // homeSection.style.transform = "translate3d(0px, 200vh , 0px)";
+  // skillsSection.style.transform = "translate3d(0px,  calc(-200vh + 70px), 0px)";
+  // contactSection.style.transform = "translate3d(0px, calc(-200vh + 140px), 0px)";
+  slide(2)
+
+
 });
 
 //     SKILLS
@@ -145,7 +166,7 @@ skills.map(function (skill) {
 smartPhoneButton.addEventListener('click', function () {
   fadeOut(smartPhoneScreen);
   setTimeout(function () {
-    fadeIn(smartPhoneScreen)
+    fadeIn(smartPhoneScreen);
     smartPhoneButton.classList.remove('fix');
     smartPhoneScreen.style.background = "url('./img/page-smart-phone.png') ";
     smartPhoneScreen.style.backgroundSize = 'contain';
