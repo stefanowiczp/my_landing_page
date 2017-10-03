@@ -29,7 +29,6 @@ var currentTranslation = 0;
 var delta = 0;
 
 var slide = function (id) {
-  console.log(id);
   var steps = lastId - parseInt(id, 10);
   if (steps !== 0 && delta === 0) {
     var sectionSliding = setInterval(function () {
@@ -51,9 +50,14 @@ var slide = function (id) {
 
 menuLinks.forEach(function (item) {
   item.addEventListener("click", function (event) {
+    document.querySelector('.active').classList.remove('active');
+    event.target.parentElement.classList.add('active');
     if (window.innerWidth >= 500) {
       event.preventDefault();
       slide(event.target.getAttribute('data-id'))
+    }
+    else {
+      slide(0)
     }
   })
 });

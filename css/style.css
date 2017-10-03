@@ -36,14 +36,14 @@
     font-size: 1.1em;
     cursor: pointer;
     text-decoration: none;
-    color:#fff;
+    color: #fff;
 }
 
 .menu--item:hover a {
     color: #ced8e5;
 }
 
-.active {
+.active a{
     text-decoration: overline solid #c9553c;
 }
 
