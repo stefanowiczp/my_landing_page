@@ -22,11 +22,31 @@ var fadeOut = function (element) {
   }, 20)
 };
 
-function slide(id) {
-  homeSection.style.transform = "translate3d(0px, -" + id + "00vh, 0px)";
-  skillsSection.style.transform = "translate3d(0px, -" + id + "00vh, 0px)";
-  contactSection.style.transform = "translate3d(0px, calc(-" + id + "00vh + 70px), 0px)";
-}
+var checkTranslation = function (section) {
+  return section.style.transform.slice(22, 26)
+};
+var lastId = 0;
+var currentTranslation = 0;
+
+var slide = function (id) {
+  var delta = 0;
+  var steps = lastId - parseInt(id, 10);
+  if (steps !== 0) {
+    var sectionSliding = setInterval(function () {
+      if (delta < 100) {
+        delta += 5;
+        homeSection.style.transform = "translate3d(0px,calc(" + (currentTranslation + delta * steps  ) + "vh), 0px)";
+        skillsSection.style.transform = "translate3d(0px, calc(" + (currentTranslation + delta * steps  ) + "vh), 0px)";
+        contactSection.style.transform = "translate3d(0px, calc(" + (currentTranslation + delta * steps  ) + "vh + 70px), 0px)";
+      }
+      else {
+        clearInterval(sectionSliding);
+        lastId = parseInt(id, 10);
+        currentTranslation = parseInt(checkTranslation(contactSection), 10);
+      }
+    }, 20)
+  }
+};
 
 menu.addEventListener("click", function (event) {
   if (window.innerWidth >= 500) {
