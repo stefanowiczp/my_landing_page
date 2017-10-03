@@ -1,9 +1,8 @@
 //      MENU
-var homeSection = document.getElementsByClassName('home--container')[0];
-var skillsSection = document.getElementsByClassName('skills--container')[0];
-var contactSection = document.getElementsByClassName('contact--container')[0];
-var menu = document.getElementsByClassName('menu')[0];
-
+var homeSection = document.querySelector('.home--container');
+var skillsSection = document.querySelector('.skills--container');
+var contactSection = document.querySelector('.contact--container');
+var menu = document.querySelector('.menu');
 //  !!!Default animations time is 200 not 400!!!
 
 var fadeIn = function (element) {
@@ -57,56 +56,56 @@ menu.addEventListener("click", function (event) {
 });
 
 //     SKILLS
-var smartPhoneScreen = document.getElementsByClassName('smart-phone--screen')[0];
-var smartPhoneButton = document.getElementsByClassName('smart-phone--home-btn')[0];
+var smartPhoneScreen = document.querySelector('.smart-phone--screen');
+var smartPhoneButton = document.querySelector('.smart-phone--home-btn');
 
 skills = [
   {
-    icon: document.getElementsByClassName('html')[0],
+    icon: document.querySelector('.html'),
     url: "./img/icons/html.png",
     rating: 3
   }, {
-    icon: document.getElementsByClassName('css')[0],
+    icon: document.querySelector('.css'),
     url: "./img/icons/css.png",
     rating: 4
   }, {
-    icon: document.getElementsByClassName('rwd')[0],
+    icon: document.querySelector('.rwd'),
     url: "./img/icons/rwd.png",
     rating: 4
   }, {
-    icon: document.getElementsByClassName('bootstrap')[0],
+    icon: document.querySelector('.bootstrap'),
     url: "./img/icons/bootstrap.png",
     rating: 2
   }, {
-    icon: document.getElementsByClassName('wordpress')[0],
+    icon: document.querySelector('.wordpress'),
     url: "./img/icons/wordpress-white.png",
     rating: 1
   }, {
-    icon: document.getElementsByClassName('javascript')[0],
+    icon: document.querySelector('.javascript'),
     url: "./img/icons/js.png",
     rating: 3
   }, {
-    icon: document.getElementsByClassName('jquery')[0],
+    icon: document.querySelector('.jquery'),
     url: "./img/icons/jquery.png",
     rating: 3
   }, {
-    icon: document.getElementsByClassName('react')[0],
+    icon: document.querySelector('.react'),
     url: "./img/icons/react.png",
     rating: 3
   }, {
-    icon: document.getElementsByClassName('git')[0],
+    icon: document.querySelector('.git'),
     url: "./img/icons/git.png",
     rating: 2
   }, {
-    icon: document.getElementsByClassName('photoshop')[0],
+    icon: document.querySelector('.photoshop'),
     url: "./img/icons/photoshop.png",
     rating: 3
   }, {
-    icon: document.getElementsByClassName('scrum')[0],
+    icon: document.querySelector('.scrum'),
     url: "./img/icons/jira.png",
     rating: 3
   }, {
-    icon: document.getElementsByClassName('jira')[0],
+    icon: document.querySelector('.jira'),
     url: "./img/icons/scrum.png",
     rating: 2
   }
