@@ -10,7 +10,7 @@
     font-family: 'Sintony', sans-serif;
     background: url("../img/IMG_2738111-Edit.jpg") center;
     background-size: cover;
-    background-attachment: fixed;
+    background-attachment: fixed !important;
 }
 
 .menu--container {
