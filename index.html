@@ -12,13 +12,13 @@
           rel="stylesheet">
 </head>
 <body>
-<div class="container">
+<div id="home--container" class="container">
     <header>
         <nav class="menu--container">
             <ul class="menu">
-                <li id="home" class="menu--item active" data-id="0">Home</li>
-                <li id="skills" class="menu--item" data-id="1">Umiejętności</li>
-                <li id="contact" class="menu--item" data-id="2">Kontakt</li>
+                <li id="home" class="menu--item active"><a href="#home--container" data-id="0">Home</a></li>
+                <li id="skills" class="menu--item"><a href="#skills--container" data-id="1">Umiejętności</a></li>
+                <li id="contact" class="menu--item"><a href="#contact--container" data-id="2">Kontakt</a></li>
             </ul>
         </nav>
     </header>
@@ -29,7 +29,7 @@
                     <h1> Junior Front-End Developer </h1>
                 </div>
             </div>
-            <div class="skills--container">
+            <div id="skills--container" class="skills--container">
                 <div class="smart-phone">
                     <div class="smart-phone--screen"></div>
                     <div class="smart-phone--home-btn"></div>
@@ -56,7 +56,7 @@
 
                 </div>
             </div>
-            <div class="contact--container">
+            <div id="contact--container" class="contact--container">
                 <h2 class="contact--item name"> Piotr Stefanowicz</h2>
                 <div class="contact--item email"><a href="mailto:pio.stefaniwicz@gmail.com"><i class="fa fa-envelope"
                                                                                                aria-hidden="true"></i>
@@ -72,7 +72,6 @@
             </div>
         </div>
     </main>
-    <footer class="footer">Copyright 2017 &copy; Piotr Stefanowicz</footer>
 </div>
 <script src="js/index.js"></script>
 </body>

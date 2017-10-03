@@ -24,12 +24,15 @@ var fadeOut = function (element) {
 
 function slide(id) {
   homeSection.style.transform = "translate3d(0px, -" + id + "00vh, 0px)";
-  skillsSection.style.transform = "translate3d(0px, calc(-" + id + "00vh + 70px), 0px)";
-  contactSection.style.transform = "translate3d(0px, calc(-" + id + "00vh + 140px), 0px)";
+  skillsSection.style.transform = "translate3d(0px, -" + id + "00vh, 0px)";
+  contactSection.style.transform = "translate3d(0px, calc(-" + id + "00vh + 70px), 0px)";
 }
 
 menu.addEventListener("click", function (event) {
-  slide(event.target.getAttribute('data-id'))
+  if (window.innerWidth >= 500) {
+    event.preventDefault();
+    slide(event.target.getAttribute('data-id'))
+  }
 });
 
 //     SKILLS
