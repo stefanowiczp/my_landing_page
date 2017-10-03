@@ -2,6 +2,7 @@
 var smartPhoneScreen = document.querySelector('.smart-phone--screen');
 var smartPhoneButton = document.querySelector('.smart-phone--home-btn');
 
+//  !!!Default animations time is 200 not 400!!!
 var fadeIn = function (element) {
   var delta = 0;
   var animation = setInterval(function () {
