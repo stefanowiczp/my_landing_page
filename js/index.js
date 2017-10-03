@@ -34,9 +34,9 @@ var slide = function (id) {
     var sectionSliding = setInterval(function () {
       if (delta < 100) {
         delta += 5;
-        homeSection.style.transform = "translate3d(0px,calc(" + (currentTranslation + delta * steps  ) + "vh), 0px)";
-        skillsSection.style.transform = "translate3d(0px, calc(" + (currentTranslation + delta * steps  ) + "vh), 0px)";
-        contactSection.style.transform = "translate3d(0px, calc(" + (currentTranslation + delta * steps  ) + "vh + 70px), 0px)";
+        homeSection.style.transform = "translate3d(0px,calc(" + (currentTranslation + delta * steps  ) + "vh - 70px), 0px)";
+        skillsSection.style.transform = "translate3d(0px, calc(" + (currentTranslation + delta * steps  ) + "vh - 70px), 0px)";
+        contactSection.style.transform = "translate3d(0px, calc(" + (currentTranslation + delta * steps  ) + "vh - 70px), 0px)";
       }
       else {
         delta = 0;
