@@ -34,67 +34,55 @@ menu.addEventListener("click", function (event) {
 
 //     SKILLS
 var smartPhoneScreen = document.getElementsByClassName('smart-phone--screen')[0];
-var htmlIcon = document.getElementsByClassName('html')[0];
-var cssIcon = document.getElementsByClassName('css')[0];
-var rwdIcon = document.getElementsByClassName('rwd')[0];
-var bootstrapIcon = document.getElementsByClassName('bootstrap')[0];
-var wordpressIcon = document.getElementsByClassName('wordpress')[0];
-var javascriptIcon = document.getElementsByClassName('javascript')[0];
-var jqueryIcon = document.getElementsByClassName('jquery')[0];
-var reactIcon = document.getElementsByClassName('react')[0];
-var gitIcon = document.getElementsByClassName('git')[0];
-var photoshopIcon = document.getElementsByClassName('photoshop')[0];
-var scrumIcon = document.getElementsByClassName('scrum')[0];
-var jiraIcon = document.getElementsByClassName('jira')[0];
 var smartPhoneButton = document.getElementsByClassName('smart-phone--home-btn')[0];
 
 skills = [
   {
-    icon: htmlIcon,
+    icon: document.getElementsByClassName('html')[0],
     url: "./img/icons/html.png",
     rating: 3
   }, {
-    icon: cssIcon,
+    icon: document.getElementsByClassName('css')[0],
     url: "./img/icons/css.png",
     rating: 4
   }, {
-    icon: rwdIcon,
+    icon: document.getElementsByClassName('rwd')[0],
     url: "./img/icons/rwd.png",
     rating: 4
   }, {
-    icon: bootstrapIcon,
+    icon: document.getElementsByClassName('bootstrap')[0],
     url: "./img/icons/bootstrap.png",
     rating: 2
   }, {
-    icon: wordpressIcon,
+    icon: document.getElementsByClassName('wordpress')[0],
     url: "./img/icons/wordpress-white.png",
     rating: 1
   }, {
-    icon: javascriptIcon,
+    icon: document.getElementsByClassName('javascript')[0],
     url: "./img/icons/js.png",
     rating: 3
   }, {
-    icon: jqueryIcon,
+    icon: document.getElementsByClassName('jquery')[0],
     url: "./img/icons/jquery.png",
     rating: 3
   }, {
-    icon: reactIcon,
+    icon: document.getElementsByClassName('react')[0],
     url: "./img/icons/react.png",
-    rating: 4
+    rating: 3
   }, {
-    icon: gitIcon,
+    icon: document.getElementsByClassName('git')[0],
     url: "./img/icons/git.png",
-    rating: 1
+    rating: 2
   }, {
-    icon: photoshopIcon,
+    icon: document.getElementsByClassName('photoshop')[0],
     url: "./img/icons/photoshop.png",
     rating: 3
   }, {
-    icon: jiraIcon,
+    icon: document.getElementsByClassName('scrum')[0],
     url: "./img/icons/jira.png",
     rating: 3
   }, {
-    icon: scrumIcon,
+    icon: document.getElementsByClassName('jira')[0],
     url: "./img/icons/scrum.png",
     rating: 2
   }
