@@ -2,7 +2,7 @@
 var homeSection = document.querySelector('.home--container');
 var skillsSection = document.querySelector('.skills--container');
 var contactSection = document.querySelector('.contact--container');
-var menu = document.querySelector('.menu');
+var menuLinks = document.querySelectorAll('.menu--item a');
 //  !!!Default animations time is 200 not 400!!!
 
 var fadeIn = function (element) {
@@ -29,6 +29,7 @@ var currentTranslation = 0;
 var delta = 0;
 
 var slide = function (id) {
+  console.log(id);
   var steps = lastId - parseInt(id, 10);
   if (steps !== 0 && delta === 0) {
     var sectionSliding = setInterval(function () {
@@ -48,11 +49,13 @@ var slide = function (id) {
   }
 };
 
-menu.addEventListener("click", function (event) {
-  if (window.innerWidth >= 500) {
-    event.preventDefault();
-    slide(event.target.getAttribute('data-id'))
-  }
+menuLinks.forEach(function (item) {
+  item.addEventListener("click", function (event) {
+    if (window.innerWidth >= 500) {
+      event.preventDefault();
+      slide(event.target.getAttribute('data-id'))
+    }
+  })
 });
 
 //     SKILLS
