@@ -74,9 +74,35 @@
     height: calc(100vh);
     box-sizing: border-box;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     color: #fff;
+    background-color: rgba(44, 50, 68, 0.85);
+}
+
+.about-me--content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.about-me--description {
+    text-align: justify;
+    font-size: 18px;
+   line-height: 1.6;
+    margin: 0 0 0 50px;
+    max-width: 60%;
+}
+.about-me--description p{
+  margin: 10px 0 0 0;
+}
+
+.about-me__image{
+    margin: 0 50px;
+    border-radius: 50%;
+    width: 400px;
+    height: 400px;
 }
 
 .skills--container {
