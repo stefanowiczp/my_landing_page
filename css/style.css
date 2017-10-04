@@ -8,9 +8,22 @@
     justify-content: space-between;
     text-align: center;
     font-family: 'Sintony', sans-serif;
-    background: url("../img/IMG_2738111-Edit.jpg") center;
+}
+
+.container:before {
+    content: "";
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    background: url('../img/IMG_2738111-Edit.jpg') no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
-    background-attachment: fixed;
 }
 
 .menu--container {
@@ -41,10 +54,6 @@
 
 .menu--item:hover a {
     color: #ced8e5;
-}
-
-.active a {
-    text-decoration: overline solid #c9553c;
 }
 
 .content--container {
@@ -81,12 +90,12 @@
 
 .skills--container {
     background-color: rgba(44, 50, 68, 0.85);
-    display: none;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     padding: 70px 0 0 0;
     box-sizing: border-box;
+    display: flex;
 }
 
 .skills {
@@ -223,7 +232,7 @@
     height: 100vh;
     background-color: rgba(44, 50, 68, 0.85);
     font-size: 1em;
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     text-decoration: none;
@@ -271,11 +280,11 @@
     }
 
     .skills--container {
+        display: flex;
         flex-direction: row;
         height: calc(100vh);
         box-sizing: border-box;
         padding: 0;
-        display: flex;
     }
 
     .contact--container {
@@ -283,6 +292,10 @@
         height: calc(100vh);
         box-sizing: border-box;
         display: flex;
+    }
+
+    .active a {
+        text-decoration: overline solid #c9553c;
     }
 }
 
