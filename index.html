@@ -19,27 +19,65 @@
                 <li class="menu--item active"><a href="#home" data-id="0">Home</a></li>
                 <li class="menu--item"><a href="#about-me" data-id="1">O mnie</a></li>
                 <li class="menu--item"><a href="#skills" data-id="2">Umiejętności</a></li>
-                <li class="menu--item"><a href="#skills" data-id="3">Portfolio</a></li>
+                <li class="menu--item"><a href="#portfolio" data-id="3">Portfolio</a></li>
                 <li class="menu--item"><a href="#contact" data-id="4">Kontakt</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <div class="content--container">
+        <section class="content--container">
             <div class="section home--container">
                 <div class="home--content">
                     <h1> Junior Front-End Developer </h1>
                 </div>
             </div>
-            <div id="about-me" class="section about-me--container">
+            <section id="about-me" class="section about-me--container">
                 <div class="about-me--content">
-                    <h1>O mnie</h1>
+                    <div class="about-me--description">
+                        <h2>O mnie</h2>
+                        <p>Od zawsze lubiłem dyscypliny drużynowe. Mając 8 lat załapałem się do drużyny koszykarskiej…
+                            Tak
+                            zaczęła się moja przygoda związana z tym sportem, moją pierwszą miłością, z którą związek
+                            trwał 12 lat. Dziś została już tylko przyjaźń.</p>
+
+                        <p> W koszykówce najbardziej podoba mi się współzawodnictwo. Wspólny cel, ponad podziałami, na
+                            który
+                            pracuje cały zespół. Zespół różnych temperamentów, osobowości, ale dążących w tę samą
+                            stronę.
+                            Ludzi odpowiedzialnych za siebie, za pracę własną, tak samo jak za pracę całego zespołu.
+                            Oprócz
+                            pięknych wspomnień, koszykówce zawdzięczam również
+                            niezbędną
+                            w
+                            sportach drużynowych umiejętność komunikacji, którą we mnie rozwijała przez te wszystkie
+                            lata. Jasny podział zadań na boisku,
+                            taktyka i wspólny język, to już połowa sukcesu. Druga połowa to oczywiście litry wylanego
+                            potu na
+                            tysiącach treningów…</p>
+
+                        <p>Nie przez przypadek
+                            programowanie stało się moją drugą pasją… Posiadając cechy dobrego współzawodnika wiele
+                            przyjemności
+                            sprawia mi praca w zespole ludzi, którzy przemawiają tym samym (abstrakcyjnym dla ludzi
+                            spoza
+                            branży
+                            ;) ) językiem i dzieląc się zadaniami pracują na ten sam cel.
+                            Lubię
+                            wyzwania i zawsze śmiało stawiam im czoła z nadzieją, że kolejny
+                            projekt
+                            będzie jeszcze bardziej wymagający niż poprzedni.</p>
+                        <p>Nieograniczone możliwości i występowanie kolejnych problemów do rozwiązania są tym, co
+                            najbardziej intryguje mnie w tworzeniu ston internetowych. Satysfakcja jaką daje dojście do
+                            celu o własych siłach sprawia, że zapomiasz o wielogodzinnym wysiłku i daje Ci siłę do
+                            dalszej pracy na wiele dni.</p>
+                    </div>
+                    <img class="about-me__image" src="img/about-me.jpg" alt="me">
                 </div>
-            </div>
-            <div id="skills" class="section skills--container">
+            </section>
+            <section id="skills" class="section skills--container">
                 <div class="smart-phone">
                     <div class="smart-phone--screen"></div>
-                    <div class="smart-phone--home-btn"></div>
+                    <div class="smart-phone__home-btn"></div>
                 </div>
                 <div class="skills">
                     <div class="skills--row">
@@ -60,9 +98,9 @@
                         <div class="skills--item scrum"></div>
                         <div class="skills--item jira"></div>
                     </div>
-
                 </div>
-            </div>
+            </section>
+            <section id="contact" class="section contact--container">
             <div id="portfolio" class="section portfolio--container">
                 Portfolio
             </div>
@@ -79,8 +117,8 @@
                         class="fa fa-linkedin-square" aria-hidden="true"></i>
                     linkedin.com/in/piotr-stefanowicz</a>
                 </div>
-            </div>
-        </div>
+            </section>
+        </section>
     </main>
 </div>
 <script src="js/navigation.js"></script>
