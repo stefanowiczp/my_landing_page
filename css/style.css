@@ -71,7 +71,6 @@
 }
 
 .about-me--container {
-    height: calc(100vh);
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -83,31 +82,34 @@
 
 .about-me--content {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
+    align-items: center;
 }
 
 .about-me--description {
     text-align: justify;
-    font-size: 18px;
-   line-height: 1.6;
-    margin: 0 0 0 50px;
-    max-width: 60%;
-}
-.about-me--description p{
-  margin: 10px 0 0 0;
+    font-size: 1.0em;
+    line-height: 1.2em;
+    margin: 0 15px 10px;
+    order: 2;
 }
 
-.about-me__image{
-    margin: 0 50px;
+.about-me--description p {
+    margin: 20px 0 0 0;
+}
+
+.about-me__image {
+    margin: 20px 20px;
     border-radius: 50%;
-    width: 400px;
-    height: 400px;
+    width: 150px;
+    height: 150px;
+    order: 1;
 }
 
 .skills--container {
     background-color: rgba(44, 50, 68, 0.85);
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
@@ -240,7 +242,7 @@
     height: 100vh;
     background-color: rgba(44, 50, 68, 0.85);
     font-size: 1em;
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     text-decoration: none;
@@ -287,6 +289,17 @@
         padding: 200px 0 0 0;
     }
 
+    .about-me--container {
+        height: calc(100vh);
+    }
+
+    .about-me--description {
+        font-size: 0.9em;
+        line-height: 1.1em;
+        margin: 0 10px 10px;
+        order: 2;
+    }
+
     .skills--container {
         flex-direction: row;
         height: calc(100vh);
@@ -308,6 +321,17 @@
         width: 100px;
         height: 100px;
     }
+
+    .about-me--description {
+        font-size: 1em;
+        line-height: 1.2em;
+        margin: 0 15px 10px;
+    }
+
+    .about-me__image {
+        height: 200px;
+        width: 200px;
+    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -322,11 +346,49 @@
     .skills--item {
         margin: 20px;
     }
+
+    .about-me--content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .about-me--description {
+        font-size: 1.1em;
+        line-height: 1.3;
+    }
+
+    .about-me__image {
+        width: 300px;
+        height: 300px;
+        order: 2;
+    }
 }
 
 @media screen and (min-width: 1200px) {
     .skills--item {
         height: 140px;
         width: 140px;
+    }
+
+    .about-me--description {
+        font-size: 1.1em;
+        line-height: 1.3;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+
+    .about-me--description {
+        font-size: 1.2em;
+        line-height: 1.5;
+    }
+
+    .about-me__image {
+        margin: 0 50px;
+        border-radius: 50%;
+        width: 400px;
+        height: 400px;
     }
 }
