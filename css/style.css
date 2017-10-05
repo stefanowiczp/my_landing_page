@@ -36,13 +36,33 @@
     z-index: 1;
 }
 
+.menu__hamburger {
+    width: 30px;
+    height: 30px;
+    background-image: url("../img/menu-alt-30.png");
+    display: flex;
+    position: absolute;
+    right: 20px;
+    top: 5px;
+}
+
 .menu {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     list-style: none;
     max-width: 900px;
     margin: auto;
-    padding: 0;
+    padding: 40px 0 0 0;
+    background-color: #2c3244;
+}
+
+.menu--item {
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    align-items: center;
+    border: solid rgba(255, 255, 255, 0.1) 1px;
 }
 
 .menu--item a {
@@ -249,6 +269,7 @@
 
 .portfolio--container {
     height: calc(100vh);
+    background-color: rgba(44, 50, 68, 0.85);
     box-sizing: border-box;
     display: flex;
     justify-content: center;
@@ -287,6 +308,18 @@
 }
 
 @media screen and (min-width: 500px) {
+    .menu {
+        padding: 50px 0 0 0;
+    }
+
+    .menu--item {
+        height: 50px;
+    }
+
+    .menu__hamburger {
+        top: 10px;
+    }
+
     .content--container {
         overflow: hidden;
         height: calc(100vh);
@@ -323,7 +356,7 @@
     }
 
     .contact--container {
-        font-size: 2em;
+        font-size: 1.5em;
         height: calc(100vh);
         box-sizing: border-box;
         display: flex;
@@ -352,6 +385,29 @@
     .about-me__image {
         height: 200px;
         width: 200px;
+    }
+
+    .menu__hamburger {
+        display: none;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        list-style: none;
+        max-width: 900px;
+        padding: 0;
+        height: 70px;
+    }
+
+    .menu--item {
+        border: none;
+    }
+
+    .contact--container {
+        font-size: 2em;
     }
 }
 
