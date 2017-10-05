@@ -12,14 +12,14 @@
           rel="stylesheet">
 </head>
 <body>
-<div class="container">
+<div id="home" class="container">
     <header>
         <nav class="menu--container">
             <ul class="menu">
-                <li id="home" class="menu--item active"><a data-id="0">Home</a></li>
-                <li id="about-me" class="menu--item"><a data-id="1">O mnie</a></li>
-                <li id="skills" class="menu--item"><a data-id="2">Umiejętności</a></li>
-                <li id="contact" class="menu--item"><a data-id="3">Kontakt</a></li>
+                <li class="menu--item active"><a href="#home" data-id="0">Home</a></li>
+                <li class="menu--item"><a href="#about-me" data-id="1">O mnie</a></li>
+                <li class="menu--item"><a href="#skills" data-id="2">Umiejętności</a></li>
+                <li class="menu--item"><a href="#contact" data-id="3">Kontakt</a></li>
             </ul>
         </nav>
     </header>
@@ -30,7 +30,7 @@
                     <h1> Junior Front-End Developer </h1>
                 </div>
             </div>
-            <section class="section about-me--container">
+            <section id="about-me"  class="section about-me--container">
                 <div class="about-me--content">
                     <div class="about-me--description">
                         <h2>O mnie</h2>
@@ -73,6 +73,7 @@
                 </div>
             </section>
             <section class="section skills--container">
+            <div id="skills" class="section skills--container">
                 <div class="smart-phone">
                     <div class="smart-phone--screen"></div>
                     <div class="smart-phone__home-btn"></div>
@@ -97,6 +98,8 @@
                         <div class="skills--item jira"></div>
                     </div>
                 </div>
+            </div>
+            <div id="contact" class="section contact--container">
             </section>
             <section class="section contact--container">
                 <h2 class="contact--item name"> Piotr Stefanowicz</h2>

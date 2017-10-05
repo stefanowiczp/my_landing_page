@@ -42,11 +42,8 @@ menuLinks.forEach(function (item) {
     }
     else {
       document.querySelectorAll('.section').forEach(function (section) {
-        section.style.display = "none";
         section.style.transform = "translate3d(0,0,0)"
       });
-      var id = event.target.getAttribute('data-id');
-      document.querySelectorAll('.section')[id].style.display = "flex"
     }
   })
 });
