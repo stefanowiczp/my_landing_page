@@ -46,7 +46,7 @@
 }
 
 .menu--item a {
-    font-size: 1.1em;
+    font-size: 1em;
     cursor: pointer;
     text-decoration: none;
     color: #fff;
@@ -109,7 +109,7 @@
 }
 
 .about-me__image {
-    margin: 20px 20px;
+    margin: 40px 20px;
     border-radius: 50%;
     width: 150px;
     height: 150px;
@@ -278,10 +278,6 @@
 }
 
 @media screen and (min-width: 500px) {
-    .menu--item {
-        font-size: 2em;
-    }
-
     .content--container {
         overflow: hidden;
         height: calc(100vh);
@@ -305,7 +301,7 @@
     .about-me--description {
         font-size: 0.9em;
         line-height: 1.1em;
-        margin: 0 10px 10px;
+        margin: 0 30px 10px;
         order: 2;
     }
 
@@ -330,6 +326,10 @@
 }
 
 @media screen and (min-width: 768px) {
+    .menu--item {
+        font-size: 1.5em;
+    }
+
     .skills--item {
         width: 100px;
         height: 100px;
@@ -338,7 +338,6 @@
     .about-me--description {
         font-size: 1em;
         line-height: 1.2em;
-        margin: 0 15px 10px;
     }
 
     .about-me__image {
@@ -380,6 +379,10 @@
 }
 
 @media screen and (min-width: 1200px) {
+    .menu--item {
+        font-size: 2em;
+    }
+
     .skills--item {
         height: 140px;
         width: 140px;
