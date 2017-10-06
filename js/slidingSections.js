@@ -2,20 +2,31 @@
 (function () {
   var sectionElement = document.querySelector('.section');
   var menuLinks = document.querySelectorAll('.menu--item a');
+  var amountOfSections = document.querySelectorAll('.section').length;
   var lastId = 0;
   var currentTranslation = 0;
   var delta = 0;
 
   //EVENT LISTENERS
   document.addEventListener('mousewheel', scrollHandler);
+  document.addEventListener('keyup', arrowsHandler);
   menuLinks.forEach(function (item) {
     item.addEventListener("click", handleDependingOnDevice)
   });
 
+  function arrowsHandler(event) {
+    var dataId = parseInt(document.querySelector('.active a').getAttribute('data-id'))
+    if (dataId > 0 && event.keyCode === 38) {
+      slide(dataId - 1)
+    }
+    else if (dataId < amountOfSections - 1 && event.keyCode === 40) {
+      slide(dataId + 1)
+    }
+  }
+
   function scrollHandler(event) {
     event.preventDefault();
     var dataId = parseInt(document.querySelector('.active a').getAttribute('data-id'));
-    var amountOfSections = document.querySelectorAll('.section').length;
     var sectionDelta = event.wheelDelta > 0 ? dataId - 1 : dataId + 1;
     sectionDelta >= 0 && sectionDelta < amountOfSections ? slide(sectionDelta) : null;
   }
