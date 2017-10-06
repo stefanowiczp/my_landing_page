@@ -4,23 +4,6 @@
   var smartPhoneScreen = document.querySelector('.smart-phone--screen');
   var smartPhoneButton = document.querySelector('.smart-phone__home-btn');
 
-//  !!!Default animations time is 200 not 400!!!
-  var fadeIn = function (element) {
-    var delta = 0;
-    var animation = setInterval(function () {
-      delta >= 1 ? clearInterval(animation) : delta += 0.10;
-      element.style.opacity = delta
-    }, 20)
-  };
-  var fadeOut = function (element) {
-
-    var delta = 1;
-    var animation = setInterval(function () {
-      delta <= 0 ? clearInterval(animation) : delta -= 0.10;
-      element.style.opacity = delta
-    }, 20)
-  };
-
   var skills = [
     {
       icon: document.querySelector('.html'),
@@ -74,22 +57,27 @@
   ];
 
   var putOnScreen = function (skill) {
-    fadeOut(smartPhoneScreen);
-    setTimeout(function () {
-      smartPhoneScreen.style.background = 'url(' + skill.url + ')';
-      smartPhoneScreen.style.backgroundSize = 'contain';
-      smartPhoneScreen.style.backgroundRepeat = 'no-repeat';
-      smartPhoneScreen.style.paddingTop = '200px';
-      smartPhoneScreen.innerHTML = "";
-      for (var i = 1; i <= skill.rating; i++) {
-        var currentState = smartPhoneScreen.innerHTML;
-        currentState = currentState + "<img src='./img/icons/star.png' alt='star'/>";
-        smartPhoneScreen.innerHTML = currentState;
-      }
-      smartPhoneButton.classList.add('fix');
-      fadeIn(smartPhoneScreen);
-    }, 200);
+    if (smartPhoneScreen.classList.contains('fade-out-in')) {
+    }
+    else {
+      smartPhoneScreen.classList.add('fade-out-in');
 
+      setTimeout(function () {
+        smartPhoneScreen.style.background = 'url(' + skill.url + ')';
+        smartPhoneScreen.style.backgroundSize = 'contain';
+        smartPhoneScreen.style.backgroundRepeat = 'no-repeat';
+        smartPhoneScreen.style.paddingTop = '200px';
+        smartPhoneScreen.innerHTML = "";
+        for (var i = 1; i <= skill.rating; i++) {
+          var currentState = smartPhoneScreen.innerHTML;
+          currentState = currentState + "<img src='./img/icons/star.png' alt='star'/>";
+          smartPhoneScreen.innerHTML = currentState;
+        }
+      }, 200);
+      setTimeout(function () {
+        smartPhoneScreen.classList.remove('fade-out-in')
+      }, 400)
+    }
   };
 
   skills.map(function (skill) {
