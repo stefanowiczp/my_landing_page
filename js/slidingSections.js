@@ -13,13 +13,16 @@
 
   var slide = function (id) {
     var steps = lastId - parseInt(id, 10);
+
     if (steps !== 0 && delta === 0) {
       var sectionSliding = setInterval(function () {
         if (delta < 100) {
-          delta += 5;
+          delta += 4;
           document.querySelectorAll('.section').forEach(function (section) {
             section.style.transform = "translate3d(0px,calc(" + (currentTranslation + delta * steps  ) + "vh - 70px), 0px)";
           });
+          document.querySelector('.active').classList.remove('active');
+          document.querySelectorAll('.menu--item')[id].classList.add('active')
         }
         else {
           delta = 0;
@@ -27,14 +30,14 @@
           lastId = parseInt(id, 10);
           currentTranslation = parseInt(checkTranslation(sectionElement), 10);
         }
-      }, 20)
+      }, 10)
     }
   };
 
+  document.addEventListener('mousewheel', scrollHandler);
+
   menuLinks.forEach(function (item) {
     item.addEventListener("click", function (event) {
-      document.querySelector('.active').classList.remove('active');
-      event.target.parentElement.classList.add('active');
       if (window.innerWidth >= 500) {
         document.querySelectorAll('.section').forEach(function (section) {
           section.style.display = "flex";
@@ -49,15 +52,12 @@
       }
     })
   });
-  var scrollHandler = function (event) {
+
+  function scrollHandler(event) {
     event.preventDefault();
     var dataId = parseInt(document.querySelector('.active a').getAttribute('data-id'));
     var amountOfSections = document.querySelectorAll('.section').length;
-    var delta = event.wheelDelta > 0 ? dataId - 1 : dataId + 1;
-    delta >= 0 && delta <= amountOfSections ? slide(delta) : null
-  };
-
-
-  document.addEventListener('mousewheel', scrollHandler);
-
+    var sectionDelta = event.wheelDelta > 0 ? dataId - 1 : dataId + 1;
+    sectionDelta >= 0 && sectionDelta < amountOfSections ? slide(sectionDelta) : null;
+  }
 })();
