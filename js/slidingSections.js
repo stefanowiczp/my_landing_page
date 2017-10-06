@@ -1,17 +1,42 @@
 "use strict";
 (function () {
-  //      MENU
   var sectionElement = document.querySelector('.section');
   var menuLinks = document.querySelectorAll('.menu--item a');
-
-  var checkTranslation = function (section) {
-    return section.style.transform.slice(22, 26)
-  };
   var lastId = 0;
   var currentTranslation = 0;
   var delta = 0;
 
-  var slide = function (id) {
+  //EVENT LISTENERS
+  document.addEventListener('mousewheel', scrollHandler);
+  menuLinks.forEach(function (item) {
+    item.addEventListener("click", handleDependingOnDevice)
+  });
+
+  function scrollHandler(event) {
+    event.preventDefault();
+    var dataId = parseInt(document.querySelector('.active a').getAttribute('data-id'));
+    var amountOfSections = document.querySelectorAll('.section').length;
+    var sectionDelta = event.wheelDelta > 0 ? dataId - 1 : dataId + 1;
+    sectionDelta >= 0 && sectionDelta < amountOfSections ? slide(sectionDelta) : null;
+  }
+
+  function handleDependingOnDevice(event) {
+    if (window.innerWidth >= 500) {
+      event.preventDefault();
+      slide(event.target.getAttribute('data-id'))
+    }
+    else {
+      document.querySelectorAll('.section').forEach(function (section) {
+        section.style.transform = "translate3d(0,0,0)"
+      });
+    }
+  }
+
+  function checkTranslation(section) {
+    return section.style.transform.slice(22, 26)
+  }
+
+  function slide(id) {
     var steps = lastId - parseInt(id, 10);
 
     if (steps !== 0 && delta === 0) {
@@ -32,32 +57,5 @@
         }
       }, 10)
     }
-  };
-
-  document.addEventListener('mousewheel', scrollHandler);
-
-  menuLinks.forEach(function (item) {
-    item.addEventListener("click", function (event) {
-      if (window.innerWidth >= 500) {
-        document.querySelectorAll('.section').forEach(function (section) {
-          section.style.display = "flex";
-        });
-        event.preventDefault();
-        slide(event.target.getAttribute('data-id'))
-      }
-      else {
-        document.querySelectorAll('.section').forEach(function (section) {
-          section.style.transform = "translate3d(0,0,0)"
-        });
-      }
-    })
-  });
-
-  function scrollHandler(event) {
-    event.preventDefault();
-    var dataId = parseInt(document.querySelector('.active a').getAttribute('data-id'));
-    var amountOfSections = document.querySelectorAll('.section').length;
-    var sectionDelta = event.wheelDelta > 0 ? dataId - 1 : dataId + 1;
-    sectionDelta >= 0 && sectionDelta < amountOfSections ? slide(sectionDelta) : null;
   }
 })();
