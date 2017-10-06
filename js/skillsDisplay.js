@@ -47,11 +47,11 @@
       rating: 3
     }, {
       icon: document.querySelector('.scrum'),
-      url: "./img/icons/jira.png",
+      url: "./img/icons/scrum.png",
       rating: 3
     }, {
       icon: document.querySelector('.jira'),
-      url: "./img/icons/scrum.png",
+      url: "./img/icons/jira.png",
       rating: 2
     }
   ];
@@ -61,6 +61,7 @@
     }
     else {
       smartPhoneScreen.classList.add('fade-out-in');
+      smartPhoneButton.classList.add('fix');
 
       setTimeout(function () {
         smartPhoneScreen.style.background = 'url(' + skill.url + ')';
@@ -87,15 +88,17 @@
   });
 
   smartPhoneButton.addEventListener('click', function () {
-    fadeOut(smartPhoneScreen);
+    smartPhoneScreen.classList.add('fade-out-in');
     setTimeout(function () {
-      fadeIn(smartPhoneScreen);
       smartPhoneButton.classList.remove('fix');
       smartPhoneScreen.style.background = "url('./img/page-smart-phone.png') ";
       smartPhoneScreen.style.backgroundSize = 'contain';
       smartPhoneScreen.style.backgroundRepeat = 'no-repeat';
       smartPhoneScreen.style.paddingTop = '0';
       smartPhoneScreen.innerHTML = "";
-    }, 200)
+    }, 200);
+    setTimeout(function () {
+      smartPhoneScreen.classList.remove('fade-out-in')
+    }, 400)
   });
 })();

@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'BlackWeb';
+    src: url('./BlackWeb.woff2') format('woff2');
+}
+
 * {
     margin: 0;
 }
@@ -11,7 +16,8 @@ p {
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
-    font-family: 'Sintony', sans-serif;
+    font-family: 'BlackWeb', 'Sintony', sans-serif;
+
 }
 
 .container:before {
@@ -58,6 +64,7 @@ p {
     margin: auto;
     padding: 70px 0 0 0;
     background-color: #2c3244;
+    text-transform: uppercase;
 }
 
 .menu-mobile {
@@ -122,6 +129,7 @@ p {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    font-family: 'Sintony', sans-serif;
 }
 
 .about-me--description {
@@ -180,7 +188,6 @@ p {
 }
 
 .fade-out-in {
-    margin-top: -195px;
     animation: fade-out-in 0.4s;
 }
 
@@ -275,13 +282,14 @@ p {
     font-size: 40px;
 }
 
-.smart-phone--home-btn {
+.smart-phone__home-btn {
     margin-top: 5px;
     margin-left: 82px;
     height: 38px;
     width: 38px;
     border-radius: 50%;
     cursor: pointer;
+    display: flex;
 }
 
 .fix {
