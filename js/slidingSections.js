@@ -49,4 +49,15 @@
       }
     })
   });
+  var scrollHandler = function (event) {
+    event.preventDefault();
+    var dataId = parseInt(document.querySelector('.active a').getAttribute('data-id'));
+    var amountOfSections = document.querySelectorAll('.section').length;
+    var delta = event.wheelDelta > 0 ? dataId - 1 : dataId + 1;
+    delta >= 0 && delta <= amountOfSections ? slide(delta) : null
+  };
+
+
+  document.addEventListener('mousewheel', scrollHandler);
+
 })();
