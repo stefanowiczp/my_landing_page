@@ -9,6 +9,7 @@
 
   //EVENT LISTENERS
   document.addEventListener('mousewheel', scrollHandler);
+  document.addEventListener('DOMMouseScroll', scrollHandler);
   document.addEventListener('keyup', arrowsHandler);
   menuLinks.forEach(function (item) {
     item.addEventListener("click", handleDependingOnDevice)
@@ -26,8 +27,9 @@
 
   function scrollHandler(event) {
     event.preventDefault();
+    var scrollDelta = event.wheelDelta || -event.detail;
     var dataId = parseInt(document.querySelector('.active a').getAttribute('data-id'));
-    var sectionDelta = event.wheelDelta > 0 ? dataId - 1 : dataId + 1;
+    var sectionDelta = scrollDelta > 0 ? dataId - 1 : dataId + 1;
     sectionDelta >= 0 && sectionDelta < amountOfSections ? slide(sectionDelta) : null;
   }
 
